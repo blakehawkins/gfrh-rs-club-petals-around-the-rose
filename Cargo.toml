@@ -1,0 +1,11 @@
+[package]
+name = "gfrh-rs-club-petals-around-the-rose"
+version = "0.1.0"
+authors = ["Blake"]
+
+[dependencies]
+failure        = "0.1.1"
+failure_derive = "0.1.1"
+ferris_print   = "0.1"
+rand           = "0.3.14"
+structopt      = "0.2"
