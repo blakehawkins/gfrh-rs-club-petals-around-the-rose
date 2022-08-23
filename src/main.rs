@@ -1,6 +1,6 @@
 use std::io;
 
-use failure::Error;
+use anyhow::Result;
 use rand::Rng;
 use structopt::StructOpt;
 
@@ -12,7 +12,7 @@ struct Opt {
 }
 
 
-fn run() -> Result<(), Error> {
+fn run() -> Result<()> {
     let opt = Opt::from_args();
     let mut dice = Vec::with_capacity(opt.dice as usize);
 
@@ -52,18 +52,6 @@ fn run() -> Result<(), Error> {
 }
 
 
-fn main() {
-    if let Err(ref e) = run() {
-        use std::io::Write;
-        let stderr = &mut ::std::io::stderr();
-        let errmsg = "Error writing to stderr";
-
-        writeln!(stderr, "error: {}", e).expect(errmsg);
-
-        writeln!(stderr, "caused by: {}", e.cause()).expect(errmsg);
-
-        writeln!(stderr, "backtrace: {:?}", e.backtrace()).expect(errmsg);
-
-        ::std::process::exit(1);
-    }
+fn main() -> Result<()> {
+    run()
 }

@@ -5,7 +5,6 @@ authors = ["Blake"]
 edition = "2021"
 
 [dependencies]
-failure        = "0.1.1"
-failure_derive = "0.1.1"
-rand           = "0.3.14"
-structopt      = "0.2"
+anyhow = "1.0"
+rand = "0.3.14"
+structopt = "0.2"
