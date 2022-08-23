@@ -1,9 +1,3 @@
-#[macro_use] extern crate failure;
-extern crate rand;
-#[macro_use] extern crate failure_derive;
-#[macro_use] extern crate ferris_print;
-#[macro_use] extern crate structopt;
-
 use std::io;
 
 use failure::Error;
@@ -49,9 +43,9 @@ fn run() -> Result<(), Error> {
     let guess: u32 = guess.trim().parse().expect("Failed to parse u32");
 
     if guess == soln {
-        ferrisprint!("You're right!");
+        println!("You're right!");
     } else {
-        ferrisprint!("Sorry, the right answer was {}.", soln);
+        println!("Sorry, the right answer was {}.", soln);
     }
 
     Ok(())
