@@ -2,12 +2,12 @@ use std::io;
 
 use anyhow::Result;
 use rand::Rng;
-use structopt::StructOpt;
+use clap::StructOpt;
 
 #[derive(StructOpt, Debug)]
 #[structopt(name = "gfrh-rs-club-petals-around-the-rose")]
 struct Opt {
-    #[structopt(short = "d", long = "dice", default_value = "5")]
+    #[structopt(short = 'd', long = "dice", default_value = "5")]
     dice: u16,
 }
 
